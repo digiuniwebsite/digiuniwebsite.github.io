@@ -403,8 +403,6 @@ li.highway-car {
 
 .beneficial-section {
     text-align: center;
-    margin: 50px auto;
-    margin-bottom: 50px;
     padding: 20px;
     background-color: #fff;
     border-radius: 50px;
@@ -483,27 +481,126 @@ li.highway-car {
     display: block;
     margin-bottom: 50px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffd631;
     border-radius: 50px;
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    text-align: center;
 }
 
 .courses-section .course-info {
     flex: 1;
     display: flex;
-    flex-direction: column;
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
     align-items: center;
+}
 
+/* CSS cho tiêu đề của khóa học */
+.course-title {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Plus Jakarta Sans ExtraBold";
+    margin-left: 20px;
+}
+
+/* CSS cho tuổi của khóa học */
+.course-age {
+    text-align: right;
+    font-family: 'Plus Jakarta Sans Light';
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.course-description {
+    margin-left: 20px;
+    text-align: left;
+    font-size: 15px;
 }
 
 .courses-section .course-info .course-container {
-    display: block;
+    display: inline-block;
 }
 
-.courses-section img {
+.courses-section .course-info .course-container .course-section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    margin-left: 200px;
+    width: 500px;
+    height: 310px;
+    position: relative;
+}
+
+/* Thêm hiệu ứng hover */
+.courses-section .course-info .course-container .course-section:hover {
+    z-index: 9999;
+    /* Đặt z-index cao nhất khi hover */
+    transform: scale(1.05);
+    /* Phóng to hộp khi hover */
+    transition: z-index 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.4);
+}
+
+#box1 {
+    background-color: #EEEEEE;
+}
+
+#box2 {
+    background-color: #969696;
+    margin-top: -270px;
+}
+
+#box3 {
+    background-color: #EEEEEE;
+    margin-top: -270px;
+}
+
+#box4 {
+    background-color: #969696;
+    margin-top: -270px;
+}
+
+/* CSS for the button container */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    /* Aligns items to the right */
+    margin-bottom: 60px;
+    margin-right: 20px;
+}
+
+/* CSS for the more detail button */
+.more-detail-btn {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.more-detail-btn:hover {
+    background-color: #3f3f3f;
+}
+
+/* CSS for the arrow icon */
+.more-detail-btn i {
+    margin-left: 5px;
+}
+
+
+
+
+.course-section img {
     max-width: 500px;
+}
+
+.courses-section .image-container {
+    margin-left: 150px;
 }

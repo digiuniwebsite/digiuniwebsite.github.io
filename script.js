@@ -73,5 +73,44 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Lấy tất cả các phần tử ".course-section"
+const courseSections = document.querySelectorAll('.course-section');
+let count = 1;
+courseSections.forEach((section, index) => {
+    const zIndex = count; // Đặt z-index ngược với vị trí của phần tử
+    
+    // Thiết lập z-index cho phần tử ".course-section"
+    section.style.zIndex = zIndex;
+    
+    // Lấy tiêu đề h2 trong mỗi phần tử ".course-section"
+    const h2 = section.querySelector('h2');
+    if (h2) {
+        h2.style.zIndex = zIndex; // Đặt z-index cho tiêu đề h2
+    }
+    
+    // Lấy đoạn văn bản p trong mỗi phần tử ".course-section"
+    const p = section.querySelector('p');
+    if (p) {
+        p.style.zIndex = zIndex; // Đặt z-index cho đoạn văn bản p
+    }
+    
+    // Gán sự kiện hover cho mỗi phần tử ".course-section"
+    section.addEventListener('mouseenter', () => {
+        // Thiết lập z-index cao nhất cho phần tử đang hover
+        section.style.zIndex = courseSections.length + 1;
+        
+        // Phóng to hộp khi hover
+        section.style.transform = 'scale(1.05)';
+    });
+    
+    section.addEventListener('mouseleave', () => {
+        // Thiết lập lại z-index và kích thước khi rời chuột ra khỏi phần tử
+        section.style.zIndex = zIndex;
+        section.style.transform = 'scale(1)';
+    });
+    count++;
+});
+
+
 
 typeWriter();
