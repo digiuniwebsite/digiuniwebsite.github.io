@@ -101,19 +101,6 @@ main {
     margin: 0;
 }
 
-/* .promote-section .content-word #typing-text {
-    font-weight: bold;
-    font-size: 50px;
-    background-color: #f3ec78;
-    background-image: linear-gradient(90deg, #f3ec78 1%, #066aff);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
- */
-
 .promote-section .content-word .p {
     color: #666;
 }
@@ -385,4 +372,138 @@ li.highway-car {
 
 #white {
     background: #ffffff;
+}
+
+#social-message-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#social-message-btn .zalo-chat img,
+#social-message-btn .messenger-chat img {
+    display: flex;
+    width: 75px;
+    height: 75px;
+}
+
+#social-message-btn .zalo-chat {
+    margin-right: 10px;
+}
+
+#social-message-btn .messenger-chat {
+    margin-left: 10px;
+}
+
+#social-message-btn .zalo-chat:hover,
+#social-message-btn .messenger-chat:hover {
+    transform: translateY(-5px);
+}
+
+.beneficial-section {
+    text-align: center;
+    margin: 50px auto;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.beneficial-section .title {
+    font-weight: lighter;
+}
+
+.beneficial-section .title h2 {
+    font-family: "Plus Jakarta Sans Light";
+    font-size: 57px;
+    margin: 100px 340px;
+}
+
+.beneficial-section .title h2 b {
+    font-family: "Plus Jakarta Sans Bold";
+    font-size: 57px;
+}
+
+
+.option-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option {
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.option img {
+    max-width: 500px;
+    height: auto;
+}
+
+.option:nth-child(odd) {
+    margin-top: -75px;
+    margin-bottom: 75px;
+}
+
+.option:nth-child(even) {
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+.option h4,
+.option p {
+    margin: 0 100px;
+}
+
+.option p {
+    font-size: 18px;
+}
+
+.option h4 {
+    font-size: 43px;
+    font-family: "Plus Jakarta Sans ExtraBold";
+    color: #545454;
+}
+
+.option .benefit {
+    text-align: left;
+}
+
+.courses-section {
+    display: block;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.courses-section .course-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+
+}
+
+.courses-section .course-info .course-container {
+    display: block;
+}
+
+.courses-section img {
+    max-width: 500px;
 }
