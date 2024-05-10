@@ -379,27 +379,56 @@ li.highway-car {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#social-message-btn .zalo-chat,
+#social-message-btn .messenger-chat {
+    position: relative;
+    /* Đặt vị trí tương đối để phần tử con sử dụng vị trí tương đối với container */
+    width: 75px;
+    height: 75px;
+    transform: translateY(0) scale(1);
+
 }
 
 #social-message-btn .zalo-chat img,
 #social-message-btn .messenger-chat img {
-    display: flex;
-    width: 75px;
-    height: 75px;
+    width: 100%;
+    /* Làm cho hình ảnh lấp đầy phần tử cha */
+    height: 100%;
+
 }
 
 #social-message-btn .zalo-chat {
-    margin-right: 10px;
-}
-
-#social-message-btn .messenger-chat {
-    margin-left: 10px;
+    margin-bottom: 10px;
+    /* Tạo khoảng cách giữa các biểu tượng */
 }
 
 #social-message-btn .zalo-chat:hover,
 #social-message-btn .messenger-chat:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.1);
 }
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0);
+        /* Kích thước ban đầu là 0 */
+    }
+
+    50% {
+        box-shadow: 0 0 40px 20px rgba(232, 255, 84, 0.7);
+        /* Kích thước đạt đến đỉnh điểm */
+    }
+
+    100% {
+        box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0);
+        /* Trở lại kích thước ban đầu */
+    }
+}
+
 
 .beneficial-section {
     text-align: center;
@@ -486,6 +515,11 @@ li.highway-car {
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     text-align: center;
+}
+
+.courses-section h1 {
+    font-size: 75px;
+    font-family: "Plus Jakarta Sans ExtraBold";
 }
 
 .courses-section .course-info {
@@ -594,13 +628,124 @@ li.highway-car {
     margin-left: 5px;
 }
 
-
-
-
 .course-section img {
     max-width: 500px;
 }
 
 .courses-section .image-container {
     margin-left: 150px;
+}
+
+/* Tabs */
+/* Additional CSS */
+.what-child-learn {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.image-content {
+    margin-left: 50px;
+    max-height: 100%;
+    align-content: center;
+    display: block;
+    justify-content: center;
+}
+
+.image-content img {
+    max-height: 450px;
+    border-radius: 30px;
+
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.tabs .tab-big-title {
+    margin-left: 5%;
+    font-size: 40px;
+}
+
+.tabs .tab-title {
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.tabs label {
+    order: initial;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+    background: #aaaaaa00;
+    font-weight: bold;
+    transition: background ease 0.2s;
+    border-radius: 30px;
+}
+
+.separator {
+    width: 450px;
+    /* Chiều rộng của đường mỏng */
+    height: 2px;
+    /* Chiều cao của đường mỏng */
+    background-color: #ccc;
+    /* Màu sắc của đường mỏng */
+    margin: 0 15px;
+    /* Khoảng cách giữa các đường mỏng */
+    align-self: center;
+}
+
+
+.tabs .tab {
+    order: initial;
+    margin-left: 30px;
+    flex-grow: 1;
+    border-radius: 30px;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+}
+
+.tabs input[type="radio"] {
+    display: none;
+}
+
+.tabs input[type="radio"]:checked+label {
+    background: #fff;
+    border-radius: 30px;
+}
+
+.tabs input[type="radio"]:checked+label+.tab {
+    display: block;
+    border-radius: 30px;
+}
+
+.round-button {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(239.1deg, #2BB2FF 17.14%, #9FA69D 48.51%, #FFCE07 79.88%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26px;
+    color: #000000;
+    cursor: pointer;
+    margin-right: 10px;
+    /* Để tạo khoảng cách giữa nút và văn bản */
 }

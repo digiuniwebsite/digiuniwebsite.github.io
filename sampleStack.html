@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider with Comment Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 300px;
+            flex-shrink: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin: 0 10px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide h2 {
+            margin-bottom: 10px;
+        }
+
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .comment {
+            margin-top: auto;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        .comment-avatar {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comment-info {
+            font-size: 12px;
+            color: #666;
+        }
+
+        button {
+            margin-top: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+
+        button:hover {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-title">
+                        <h2>Title 1</h2>
+                    </div>
+                    <div class="slide-body">
+                        <p>This is the content of slide 1.</p>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-avatar">
+                            <div class="avatar"><img src="https://via.placeholder.com/30" alt="Avatar"></div>
+                            <div class="comment-info">
+                                <div class="comment-name">John Doe</div>
+                                <div class="comment-role">CEO, Company X</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-title">
+                        <h2>Title 2</h2>
+                    </div>
+                    <div class="slide-body">
+                        <p>This is the content of slide 2.</p>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-avatar">
+                            <div class="avatar"><img src="https://via.placeholder.com/30" alt="Avatar"></div>
+                            <div class="comment-info">
+                                <div class="comment-name">Jane Smith</div>
+                                <div class="comment-role">Designer, Company Y</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-title">
+                        <h2>Title 3</h2>
+                    </div>
+                    <div class="slide-body">
+                        <p>This is the content of slide 3.</p>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-avatar">
+                            <div class="avatar"><img src="https://via.placeholder.com/30" alt="Avatar"></div>
+                            <div class="comment-info">
+                                <div class="comment-name">Alex Johnson</div>
+                                <div class="comment-role">Developer, Company Z</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="prev" onclick="prevSlide()"><i class="fas fa-angle-left"></i></button>
+    <button class="next" onclick="nextSlide()"><i class="fas fa-angle-right"></i></button>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideWidth = slides[0].clientWidth + 20; // 20px for margin
+
+        function goToSlide(index) {
+            currentIndex = index;
+            const offset = -slideWidth * currentIndex;
+            document.querySelector('.slides').style.transform = `translateX(${offset}px)`;
+        }
+
+        function prevSlide() {
+            if (currentIndex === 0) {
+                goToSlide(slides.length - 1);
+            } else {
+                goToSlide(currentIndex - 1);
+            }
+        }
+
+        function nextSlide() {
+            if (currentIndex === slides.length - 1) {
+                goToSlide(0);
+            } else {
+                goToSlide(currentIndex + 1);
+            }
+        }
+    </script>
+</body>
+
+</html>
